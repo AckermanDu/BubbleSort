@@ -10,18 +10,18 @@ struct employee
 
 int compBYname(const void* e1, const void* e2)
 {
-	int ret= strcmp(((struct employee*)e1)->name, ((struct employee*)e2)->name);//strcmp  ·µ»ØÖµ£º>0,==0,<0
+	int ret= strcmp(((struct employee*)e1)->name, ((struct employee*)e2)->name);//strcmp  è¿”å›å€¼ï¼š>0,==0,<0
 	return ret;
 }
 
 /*
-strcmpº¯Êı£º
+strcmpå‡½æ•°ï¼š
 str1 = "appple";
 str2 = "banana";
-strcmp(str1,str2) ·µ»ØÖµ<0
+strcmp(str1,str2) è¿”å›å€¼<0
 */
 
-int compare_int(const void* e1, const void* e2)  //±È½Ïº¯Êıe1´ó·µ»Ø1£¬ÏàµÈ·µ»Ø0£¬e2´ó·µ»Ø-1
+int compare_int(const void* e1, const void* e2)  //æ¯”è¾ƒå‡½æ•°e1å¤§è¿”å›1ï¼Œç›¸ç­‰è¿”å›0ï¼Œe2å¤§è¿”å›-1
 {
 	int ret = (*(int*)e1 - *(int*)e2);
 	return ret;
@@ -30,7 +30,7 @@ int compare_int(const void* e1, const void* e2)  //±È½Ïº¯Êıe1´ó·µ»Ø1£¬ÏàµÈ·µ»Ø0£
 
 void Swap(char* buf1,char* buf2,int width)
 {
-	//²»ÓÃ´´½¨¾ßÌåÀàĞÍµÄÁÙÊ±±äÁ¿£¬½»»»
+	//ä¸ç”¨åˆ›å»ºå…·ä½“ç±»å‹çš„ä¸´æ—¶å˜é‡ï¼Œäº¤æ¢
 	int i = 0;
 	for (i = 0; i < width; i++)
 	{
@@ -44,23 +44,23 @@ void Swap(char* buf1,char* buf2,int width)
 
 void bubble_sort(void* base, int NumOfElement, int SizeOfOneElement, int (*cmp)(const void* e1
 	, const void* e2))
-/*²ÎÊıËµÃ÷£º
-base - ¿ÕÖ¸ÕëÀàĞÍ£¬¿ÉÒÔ½ÓÊÕÈÎºÎÀàĞÍµÄÖ¸Õë£¬ÒÔ±ãÅÅĞòÈÎºÎÀàĞÍµÄÊı¾İ
-NumOfElement - ËùÅÅĞòµÄÊı×éµÄÔªËØ¸öÊı
-SizeOfOneElement - Êı×éÖĞÃ¿¸öÔªËØµÄ´óĞ¡
-cmp - º¯ÊıÖ¸Õë£¬½ÓÊÜ±È½Ïº¯Êı£¬¸Ãº¯ÊıÓÃÓÚ±È½ÏÊı×éÖĞÁ½¸öÏàÁÚÔªËØµÄ´óĞ¡£¨»òÅÅĞò¹ØÏµ£©£¬×ÔĞĞÉè¼Æ
-	  Ä¬ÈÏ·µ»ØÖµ´óÓÚ0£¬½øĞĞ½»»»
+/*å‚æ•°è¯´æ˜ï¼š
+base - ç©ºæŒ‡é’ˆç±»å‹ï¼Œå¯ä»¥æ¥æ”¶ä»»ä½•ç±»å‹çš„æŒ‡é’ˆï¼Œä»¥ä¾¿æ’åºä»»ä½•ç±»å‹çš„æ•°æ®
+NumOfElement - æ‰€æ’åºçš„æ•°ç»„çš„å…ƒç´ ä¸ªæ•°
+SizeOfOneElement - æ•°ç»„ä¸­æ¯ä¸ªå…ƒç´ çš„å¤§å°
+cmp - å‡½æ•°æŒ‡é’ˆï¼Œæ¥å—æ¯”è¾ƒå‡½æ•°ï¼Œè¯¥å‡½æ•°ç”¨äºæ¯”è¾ƒæ•°ç»„ä¸­ä¸¤ä¸ªç›¸é‚»å…ƒç´ çš„å¤§å°ï¼ˆæˆ–æ’åºå…³ç³»ï¼‰ï¼Œè‡ªè¡Œè®¾è®¡
+	  é»˜è®¤è¿”å›å€¼å¤§äº0ï¼Œè¿›è¡Œäº¤æ¢
 */
 {
-	int i = 0;										//Ã°ÅİÅÅĞòÒ»ÌË¿ÉÒÔ±£Ö¤ ×î´óµÄÒ»¶¨ÄÜ·ÅÔÚ×îºóÃæ
+	int i = 0;										//å†’æ³¡æ’åºä¸€è¶Ÿå¯ä»¥ä¿è¯ æœ€å¤§çš„ä¸€å®šèƒ½æ”¾åœ¨æœ€åé¢
 	for (i = 0; i < NumOfElement - 1; i++)
 	{
-		int flag = 1;								//¼ÙÉèÒÔ¼°ÅÅĞòºÃ,·ÀÖ¹ÖØ¸´ÔËËã
+		int flag = 1;								//å‡è®¾ä»¥åŠæ’åºå¥½,é˜²æ­¢é‡å¤è¿ç®—
 		int j = 0;
-		for (j = 0; j < NumOfElement - 1 - i; j++)  //ÀıÈç£¬¹²10¸öÔªËØÏÂ±ê 0~9£¬NumOfElement=10
-			                                        //µÚÒ»´Î´Ó0µ½8<10-1-0=9£¬µÚ¶ş´Î´Ó0µ½7<10-1-1=8
+		for (j = 0; j < NumOfElement - 1 - i; j++)  //ä¾‹å¦‚ï¼Œå…±10ä¸ªå…ƒç´ ä¸‹æ ‡ 0~9ï¼ŒNumOfElement=10
+			                                        //ç¬¬ä¸€æ¬¡ä»0åˆ°8<10-1-0=9ï¼Œç¬¬äºŒæ¬¡ä»0åˆ°7<10-1-1=8
 		{
-			if (cmp((char*)base + j * (SizeOfOneElement), (char*)base + (j+1) * (SizeOfOneElement)))
+			if ((cmp((char*)base + j * (SizeOfOneElement), (char*)base + (j+1) * (SizeOfOneElement)))>0)
 			{
 				Swap((char*)base + j * (SizeOfOneElement), (char*)base + (j+1) * (SizeOfOneElement),
 					SizeOfOneElement);
@@ -97,7 +97,7 @@ void test2()
 
 int main()
 {
-	test1();      //test1() ÊÇÅÅĞòÕûĞÍÊı×é£¬test2() ÊÇÅÅĞòÒ»¸ö½á¹¹Ìå
+	test1();      //test1() æ˜¯æ’åºæ•´å‹æ•°ç»„ï¼Œtest2() æ˜¯æ’åºä¸€ä¸ªç»“æ„ä½“
 	//test2();
 
 	return 0;
